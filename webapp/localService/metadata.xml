@@ -1,0 +1,127 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZCRM_APPR_ODATA_STM_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="ApprovalStatus" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Estat"/>
+                </Key>
+                <Property Name="Estat" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="User status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatDescr" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ApprovalHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="RefEmpResp" Type="Edm.String" Nullable="false" sap:label="Employee responsible for reference object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ZzApprovalNote" Type="Edm.String" Nullable="false" sap:label="Approval Note" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefEmpRespId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="REF_EMP_RESP_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefBpName1" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Reference BP name1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NotesChanged" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Guid" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmpChanged" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefSoldTo" Type="Edm.String" Nullable="false" sap:label="Sold-to-party name for reference object" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefObjectId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="REF_OBJECT_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefBpName2" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Reference BP name 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefObject" Type="Edm.Guid" Nullable="false" sap:label="Ref. Guid" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusChanged" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Flag for Reject All ('R') and Aprove All ('A')" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefObjectIdDescr" Type="Edm.String" Nullable="false" sap:label="REF_OBJECT_ID_DESCR" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefBpFullname" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Reference BP full name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RefObjectType" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ConcLines" Type="Edm.String" Nullable="false" sap:label="Text Lines" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ConcLinesD" Type="Edm.String" Nullable="false" sap:label="Text Lines" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crusr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Created by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtim" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Created at" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chusr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Changed by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Changed on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chtim" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Changed at" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ApprovalItemSet" Relationship="ZCRM_APPR_ODATA_STM_SRV.Header_To_M_Item" FromRole="FromRole_Header_To_M_Item" ToRole="ToRole_Header_To_M_Item"/>
+            </EntityType>
+            <EntityType Name="ApprovalItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="ApprConditionText" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PrelimApprFlg" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:label="Guid" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chgnr" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Change Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subject" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Subject Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Product" Type="Edm.String" Nullable="false" sap:label="Product Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HeaderGuid" Type="Edm.Guid" Nullable="false" sap:label="Guid" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProdCategory" Type="Edm.String" Nullable="false" MaxLength="80" sap:label="Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CopyrightYear" Type="Edm.String" Nullable="false" sap:label="Product Copyright Year" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Description for status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CustomerPrice" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Customer Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RecordGuid" Type="Edm.Binary" Nullable="false" sap:label="RECORD_GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TieredPrice" Type="Edm.String" Nullable="false" MaxLength="21" sap:label="Condition Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stat" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApprCondition" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Appr. Cond" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApprValue" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="APPR_VALUE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DealValue" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="DEAL_VALUE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ConcLines" Type="Edm.String" Nullable="false" sap:label="Text Lines" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ConcFormatted" Type="Edm.String" Nullable="false" sap:label="Formatted text lines" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status1" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status2" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AutoAppr" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crusr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Created by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtim" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Created at" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chusr" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Changed by" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chdat" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Changed on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Chtim" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Changed at" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Employee" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="BusinessPartner" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeGuid" Type="Edm.Guid" Nullable="false" sap:label="BP GUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Last name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="First name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FullName" Type="Edm.String" Nullable="false" MaxLength="80" sap:label="BP Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeePosition" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PersNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Person number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TitleText" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TitleAca1" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Academic Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TitleAca1Text" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Academic Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Xpcpt" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="PurposeComplete Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="McName1" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Name 1/last nm" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="McName2" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Name2/first nme" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsMyEmployee" Type="Edm.Boolean" Nullable="false" sap:label="TRUE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsDefaultEmployee" Type="Edm.Boolean" Nullable="false" sap:label="TRUE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DummyEmployeeIncl" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Dummy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="Header_To_M_Item" sap:content-version="1">
+                <End Type="ZCRM_APPR_ODATA_STM_SRV.ApprovalHeader" Multiplicity="1" Role="FromRole_Header_To_M_Item"/>
+                <End Type="ZCRM_APPR_ODATA_STM_SRV.ApprovalItem" Multiplicity="*" Role="ToRole_Header_To_M_Item"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Header_To_M_Item">
+                        <PropertyRef Name="Guid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Header_To_M_Item">
+                        <PropertyRef Name="HeaderGuid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZCRM_APPR_ODATA_STM_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ApprovalStatusSet" EntityType="ZCRM_APPR_ODATA_STM_SRV.ApprovalStatus" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ApprovalHeaderSet" EntityType="ZCRM_APPR_ODATA_STM_SRV.ApprovalHeader" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="ApprovalItemSet" EntityType="ZCRM_APPR_ODATA_STM_SRV.ApprovalItem" sap:creatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="EmployeeSet" EntityType="ZCRM_APPR_ODATA_STM_SRV.Employee" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="Header_To_M_ItemSet" Association="ZCRM_APPR_ODATA_STM_SRV.Header_To_M_Item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ApprovalHeaderSet" Role="FromRole_Header_To_M_Item"/>
+                    <End EntitySet="ApprovalItemSet" Role="ToRole_Header_To_M_Item"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://sprcts:8888/sap/opu/odata/sap/ZCRM_APPR_ODATA_STM_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://sprcts:8888/sap/opu/odata/sap/ZCRM_APPR_ODATA_STM_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
